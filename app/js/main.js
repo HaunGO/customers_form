@@ -85,26 +85,54 @@ purgeButton.addEventListener('click', function() {
 
 let removeMe = (_id) => {
     console.log('removeMe', _id);
-    var formData = new FormData(customerForm);
-
+    
+    // Call server function and pass id as query param.
     fetch("/removeCustomer.php?id=" + _id,
-    {
-    //    body: formData,
+    { 
        id: _id,
        method: "GET"
     })
     .then((response) => {
-        console.log('you removed')
-        showCustomer();
+        console.log(_id, "removed")
         if (!response.ok) {
             throw new Error("Network response was not OK");
+        }else{
+            showCustomer();
         }
-        return response.blob();
+        // return response.blob();
     })
     .catch((error) => {
         console.error("There has been a problem with your fetch operation:", error);
     });
-    
+
     //Dont submit the form.
     return false; 
+}
+
+
+
+let printMe = (_id) => {
+    
+    // console.log('printMe()', _id)
+    // fetch("/printCustomer.php?id=" + _id,
+    // { 
+    //    id: _id, 
+    //    method: "GET"
+    // })
+    // .then((response) => {
+    //     console.log(_id, "please print")
+    //     if (!response.ok) {
+    //         throw new Error("Network response was not OK");
+    //     }else{
+    //         showCustomer();
+    //     }
+    //     // return response.blob();
+    // })
+    // .catch((error) => {
+    //     console.error("There has been a problem with your fetch operation:", error);
+    // });
+
+    //Dont submit the form.
+    // return false; 
+
 }

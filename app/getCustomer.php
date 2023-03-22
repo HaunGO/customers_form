@@ -13,14 +13,16 @@ try {
 
     $customer = $pdo->query("SELECT * FROM customers");
 
+    // echo '<br>';
     // echo '<pre>';
     foreach ($customer->fetchAll(PDO::FETCH_ASSOC) as $customer) {
-        print_r($customer);
+        // print_r($customer);
         // print_r($customer['fax']);
         ?>
         <div>
             <span><?php echo $customer['id'] ?> - <?php echo $customer['name'] ?></span>
             <button data-id="<?php echo $customer['id'] ?>"  onclick="removeMe(<?php echo $customer['id'] ?>)">X</button>
+            <a target="_blank" href="http://localhost/printCustomer.php?id=<?php echo $customer['id'] ?>" data-id="<?php echo $customer['id'] ?>"  onclick="printMe(<?php echo $customer['id'] ?>)">Print</a>
         </div>
         <?php
     }
