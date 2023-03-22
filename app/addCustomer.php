@@ -4,14 +4,10 @@ echo 'addCustomer()';
 $name = $_POST["name"];
 $address1 = $_POST["address_1"];
 $address2 = $_POST["address_2"];
+$city = $_POST["city"];
+$state = $_POST["state"];
+$zip = $_POST["zip"];
 
-echo ('<br/>'); 
-echo ($name); 
-echo ('<br/>'); 
-echo ($address1); 
-echo ('<br/>'); 
-echo ($address2); 
-echo ('<br/>'); 
 
 $servername = "my-mysql";
 $username = "root";
@@ -27,8 +23,8 @@ if ($conn->connect_error) {
 }
 
 // Prepare and bind the statement
-$stmt = $conn->prepare("INSERT INTO customers (name, address1, address2 ) VALUES (?,?,?)");
-$stmt->bind_param("sss", $name, $address1, $address2 );
+$stmt = $conn->prepare("INSERT INTO customers (name, address1, address2, city, state, zip ) VALUES (?,?,?,?,?,?)");
+$stmt->bind_param("ssssss", $name, $address1, $address2, $city, $state, $zip );
 
 // Execute the statement
 $stmt->execute();

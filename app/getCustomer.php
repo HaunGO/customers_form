@@ -14,11 +14,11 @@ try {
     $customer = $pdo->query("SELECT * FROM customers");
 
     foreach ($customer->fetchAll(PDO::FETCH_ASSOC) as $customer) {
-        ?>
+    ?>
         <table>
             <tr>
                 <td>
-                    <button data-id="<?php echo $customer['id'] ?>"  onclick="removeMe(<?php echo $customer['id'] ?>)">X</button>
+                    <button data-id="<?php echo $customer['id'] ?>"  onclick="removeMe(<?php echo $customer['id'] ?>)">Remove</button>
                 </td>
                 <td>
                     <a target="_blank" href="http://localhost/customerDetails.php?id=<?php echo $customer['id'] ?>" ><button>Details</button></a>
@@ -30,10 +30,22 @@ try {
                     <span><?php echo $customer['id'] ?> </span>
                 </td>
                 <td>
+                    <span><?php echo $customer['name'] ?> </span>
+                </td>
+                <td>
                     <span><?php echo $customer['address1'] ?> </span>
                 </td>
                 <td>
                     <span><?php echo $customer['address2'] ?> </span>
+                </td>
+                <td>
+                    <span><?php echo $customer['city'] ?> </span>
+                </td>
+                <td>
+                    <span><?php echo $customer['state'] ?> </span>
+                </td>
+                <td>
+                    <span><?php echo $customer['zip'] ?> </span>
                 </td>
             </tr>
         </table>

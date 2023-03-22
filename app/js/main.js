@@ -1,4 +1,6 @@
-console.log('main');
+console.log('main.js');
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 function showCustomer() {
     console.log('showCustomer');
@@ -17,7 +19,7 @@ const updateButton = document.getElementById("updateButton");
 updateButton.addEventListener('click', function() {
     showCustomer()
 }); 
-
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
@@ -51,6 +53,8 @@ customerForm.onsubmit = function(event){
     return false; 
 
 }
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 
 const purgeButton = document.getElementById("purgeButton");
@@ -80,6 +84,7 @@ purgeButton.addEventListener('click', function() {
     return false; 
 
 });
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 

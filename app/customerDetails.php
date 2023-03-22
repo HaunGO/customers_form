@@ -5,20 +5,13 @@
   <title>B:H + DW</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
 
 <body>
 <h1>B:H + Dealer's Warehouse</h1>
 
-
-
-
-
-
-
 <?php
-
 
 $host = "my-mysql";
 $dbname = "my-form-db";
@@ -40,21 +33,16 @@ try {
     foreach ($customer->fetchAll(PDO::FETCH_ASSOC) as $customer) {
     }
     
-    ?>
+?>
 
-
-
-
-    <h1>
-        <?php echo $customer['id']; ?>
-    </h1>
+    <h1>Customer Details Page</h1>
+    <h5><?php echo $customer['id']; ?></h5>
     <h2><?php echo $customer['name']; ?></h2>
     <h3><?php echo $customer['address1']; ?></h3>
     <h3><?php echo $customer['address2']; ?></h3>
+    <h3><?php echo $customer['city']; ?>, <?php echo $customer['state']; ?>, <?php echo $customer['zip']; ?></h3>
 
 
-    
-    
     <?php
 
 
@@ -72,18 +60,7 @@ try {
 
 ?>
 
-
-
-
-
-
-
-
-
-
-
-
-<script src="js/main.js"></script>
+<!-- <script src="js/main.js"></script> -->
 
 </body>
 

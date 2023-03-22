@@ -7,58 +7,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-   
-  <!-- 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
-
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
-
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
-   -->
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
 
 </head>
 
 <body>
-<h1 class="text-3xl font-bold underline">B:H + Dealer's Warehouse</h1>
+    <main>
 
-    <h1>Customers</h1>
+        <h1 class="text-3xl font-bold underline">B:H + Dealer's Warehouse</h1>
+    
+    
+
 
     <form action="./addCustomer.php" method="post" class="form" id="customerForm">
-        <div>
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" >
-        </div>
-        <div>
-            <label for="address_1">Address 1:</label><br>
-            <input type="text" id="address_1" name="address_1" >
-        </div>
-        <div>
-            <label for="address_2">Address 2:</label><br>
-            <input type="text" id="address_2" name="address_2">
-        </div>
-        <!-- 
-        <div>
-            <label for="city">City:</label><br>
-            <input type="text" id="city" name="city" required>
-        </div>
-        <div>
-            <label for="state">State:</label><br>
-            <input type="text" id="state" name="state" required>
-        </div>
-        <div>
-            <label for="zip">Zip:</label><br>
-            <input type="text" id="zip" name="zip" required>
-        </div>
-        <div>
+        <fieldset style="display:inline-block">
+            <legend>Customer Information</legend>
+            <div>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" >
+            </div>
+            <div>
+                <label for="address_1">Address 1:</label><br>
+                <input type="text" id="address_1" name="address_1" >
+            </div>
+            <div>
+                <label for="address_2">Address 2:</label><br>
+                <input type="text" id="address_2" name="address_2">
+            </div>
+            <div>
+                <label for="city">City:</label><br>
+                <input type="text" id="city" name="city" >
+            </div>
+            <div>
+                <label for="state">State:</label><br>
+                <input type="text" id="state" name="state" >
+            </div>
+            <div>
+                <label for="zip">Zip:</label><br>
+                <input type="text" id="zip" name="zip" >
+            </div>
+        </fieldset>
+            <!-- 
+                <div>
             <label for="phone">Phone:</label><br>
             <input type="tel" id="phone" name="phone" required>
         </div>
@@ -103,24 +93,21 @@
                 <label for="friday">Friday</label>
         </div>
     -->
+
     <br>
-        <input id="" type="submit" value="Submit" >
+    <br>
+
+        <input id="" type="submit" value="Add Customer" >
         
     </form>
     
-    <br>
-    
-    <button id="updateButton">Show Customers</button> &nbsp; 
+    <hr>
+    <h3>Complete Customer list</h3>
+    <button id="updateButton">Show All Customers</button>
     <button id="purgeButton">Purge Database</button>
-    
     <br>
-    <br>
+    <section id="customers"></section>
 
-    <section id="customers">
-
-
-
-    </section>
 
     <script src="js/main.js"></script>
 

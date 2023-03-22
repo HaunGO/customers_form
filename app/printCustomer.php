@@ -11,7 +11,6 @@ $id = $_GET["id"];
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',16);
-// $pdf->Cell(40,10,'Hello World!');
 
 try {
     $pdo = new PDO(
@@ -32,6 +31,12 @@ try {
     $pdf->Cell(0,0, $customer['address1']);
     $pdf->Ln(5);
     $pdf->Cell(0,0, $customer['address2']);
+    $pdf->Ln(5);
+    $pdf->Cell(0,0, $customer['city']);
+    $pdf->Ln(5);
+    $pdf->Cell(0,0, $customer['state']);
+    $pdf->Ln(5);
+    $pdf->Cell(0,0, $customer['zip']);
     $pdf->Output(); 
 
 } catch (PDOException $e) {
