@@ -1,7 +1,11 @@
 ## Greetings 
 This is a PHP skills assessment and demonstrations. 
 
-## NOTE.  In the interest of time:
+This project uses Docker container to spin up an Apache server running MySql database with PhpMyAdmin. 
+
+The goal was to create a simple website that can submit a form to save new customers, display existing customers and generate a PDF document for review of each new customer.
+
+## NOTE.  In the interest of time and requirements:
 - There are NO styles added. 
 - There is NO form validation.
 - There was NO consideration for security or accessibility.
