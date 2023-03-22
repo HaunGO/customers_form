@@ -110,29 +110,3 @@ let removeMe = (_id) => {
 }
 
 
-
-let printMe = (_id) => {
-    
-    // console.log('printMe()', _id)
-    // fetch("/printCustomer.php?id=" + _id,
-    // { 
-    //    id: _id, 
-    //    method: "GET"
-    // })
-    // .then((response) => {
-    //     console.log(_id, "please print")
-    //     if (!response.ok) {
-    //         throw new Error("Network response was not OK");
-    //     }else{
-    //         showCustomer();
-    //     }
-    //     // return response.blob();
-    // })
-    // .catch((error) => {
-    //     console.error("There has been a problem with your fetch operation:", error);
-    // });
-
-    //Dont submit the form.
-    // return false; 
-
-}

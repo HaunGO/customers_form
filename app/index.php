@@ -1,11 +1,3 @@
-<?php   
-
-
-include 'functions.php';
-
-
-?>
-
 <!doctype html>
 <html class="no-js" lang="">
 <head>
@@ -31,6 +23,7 @@ include 'functions.php';
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
    -->
+
 </head>
 
 <body>

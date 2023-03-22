@@ -13,20 +13,32 @@ try {
 
     $customer = $pdo->query("SELECT * FROM customers");
 
-    // echo '<br>';
-    // echo '<pre>';
     foreach ($customer->fetchAll(PDO::FETCH_ASSOC) as $customer) {
-        // print_r($customer);
-        // print_r($customer['fax']);
         ?>
-        <div>
-            <span><?php echo $customer['id'] ?> - <?php echo $customer['name'] ?></span>
-            <button data-id="<?php echo $customer['id'] ?>"  onclick="removeMe(<?php echo $customer['id'] ?>)">X</button>
-            <a target="_blank" href="http://localhost/printCustomer.php?id=<?php echo $customer['id'] ?>" data-id="<?php echo $customer['id'] ?>"  onclick="printMe(<?php echo $customer['id'] ?>)">Print</a>
-        </div>
+        <table>
+            <tr>
+                <td>
+                    <button data-id="<?php echo $customer['id'] ?>"  onclick="removeMe(<?php echo $customer['id'] ?>)">X</button>
+                </td>
+                <td>
+                    <a target="_blank" href="http://localhost/customerDetails.php?id=<?php echo $customer['id'] ?>" ><button>Details</button></a>
+                </td>
+                <td>
+                    <a target="_blank" href="http://localhost/printCustomer.php?id=<?php echo $customer['id'] ?>"  ><button>Print</button></a>
+                </td>
+                <td>
+                    <span><?php echo $customer['id'] ?> </span>
+                </td>
+                <td>
+                    <span><?php echo $customer['address1'] ?> </span>
+                </td>
+                <td>
+                    <span><?php echo $customer['address2'] ?> </span>
+                </td>
+            </tr>
+        </table>
         <?php
     }
-    // echo '</pre>';
 
 } catch (PDOException $e) {
     throw new PDOException(
