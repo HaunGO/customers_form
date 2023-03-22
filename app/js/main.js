@@ -80,3 +80,31 @@ purgeButton.addEventListener('click', function() {
     return false; 
 
 });
+
+
+
+let removeMe = (_id) => {
+    console.log('removeMe', _id);
+    var formData = new FormData(customerForm);
+
+    fetch("/removeCustomer.php?id=" + _id,
+    {
+    //    body: formData,
+       id: _id,
+       method: "GET"
+    })
+    .then((response) => {
+        console.log('you removed')
+        showCustomer();
+        if (!response.ok) {
+            throw new Error("Network response was not OK");
+        }
+        return response.blob();
+    })
+    .catch((error) => {
+        console.error("There has been a problem with your fetch operation:", error);
+    });
+    
+    //Dont submit the form.
+    return false; 
+}

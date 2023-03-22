@@ -1,3 +1,10 @@
+<?php   
+
+
+include 'functions.php';
+
+
+?>
 
 <!doctype html>
 <html class="no-js" lang="">
@@ -27,12 +34,9 @@
 </head>
 
 <body>
-<h1>B:H + DW</h1>
-
+<h1>B:H + Dealer's Warehouse</h1>
 
     <h1>Customers</h1>
-
-
 
     <form action="./addCustomer.php" method="post" class="form" id="customerForm">
         <div>
@@ -111,7 +115,7 @@
     </form>
     
     <br>
-<button id="updateButton">Update</button>
+<button id="updateButton">Update</button> &nbsp; 
 <button id="purgeButton">Purge DB</button>
 
 

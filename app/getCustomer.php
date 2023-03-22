@@ -13,12 +13,18 @@ try {
 
     $customer = $pdo->query("SELECT * FROM customers");
 
-    echo '<pre>';
+    // echo '<pre>';
     foreach ($customer->fetchAll(PDO::FETCH_ASSOC) as $customer) {
         print_r($customer);
         // print_r($customer['fax']);
+        ?>
+        <div>
+            <span><?php echo $customer['id'] ?> - <?php echo $customer['name'] ?></span>
+            <button data-id="<?php echo $customer['id'] ?>"  onclick="removeMe(<?php echo $customer['id'] ?>)">X</button>
+        </div>
+        <?php
     }
-    echo '</pre>';
+    // echo '</pre>';
 
 } catch (PDOException $e) {
     throw new PDOException(
