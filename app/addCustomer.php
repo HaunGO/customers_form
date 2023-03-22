@@ -5,18 +5,14 @@ $name = $_POST["name"];
 $address1 = $_POST["address_1"];
 $address2 = $_POST["address_2"];
 
-?> 
-<br>
-<?php echo ($name); ?>
-<br>
-<?php echo ($address1); ?>
-<br>
-<?php echo ($address2); ?>
-<br>
-<?php //echo ($input); ?>
+echo ('<br/>'); 
+echo ($name); 
+echo ('<br/>'); 
+echo ($address1); 
+echo ('<br/>'); 
+echo ($address2); 
+echo ('<br/>'); 
 
- 
-<?php
 $servername = "my-mysql";
 $username = "root";
 $password = "root";

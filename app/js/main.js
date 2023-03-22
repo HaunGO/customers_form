@@ -1,11 +1,11 @@
 console.log('main');
 
 function showCustomer() {
-    console.log('showCustomer')
+    console.log('showCustomer');
     document.getElementById("customers").innerHTML = "";
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
-        console.log(this.responseText)
+        // console.log(this.responseText)
         document.getElementById("customers").innerHTML = this.responseText;
     }
     xhttp.open("GET", "getCustomer.php");
@@ -18,7 +18,11 @@ updateButton.addEventListener('click', function() {
     showCustomer()
 }); 
 
+
+
+
 const customerForm = document.getElementById("customerForm");
+
 customerForm.onsubmit = function(event){
     event.preventDefault();
     console.log('customerForm.onSubmit')
@@ -26,6 +30,36 @@ customerForm.onsubmit = function(event){
     var formData = new FormData(customerForm);
 
     fetch("/addCustomer.php",
+    {
+       body: formData,
+       method: "post"
+    })
+    .then((response) => {
+        console.log('1')
+        if (!response.ok) {
+            throw new Error("Network response was not OK");
+        }else{
+            showCustomer();
+        }
+        return response;
+    })
+    .catch((error) => {
+        console.error("There has been a problem with your fetch operation:", error);
+    });
+
+    //Dont submit the form.
+    return false; 
+
+}
+
+
+const purgeButton = document.getElementById("purgeButton");
+
+purgeButton.addEventListener('click', function() {
+    console.log('purgeButton click')
+    var formData = new FormData(customerForm);
+
+    fetch("/purgeCustomers.php",
     {
        body: formData,
        method: "post"
@@ -45,5 +79,4 @@ customerForm.onsubmit = function(event){
     //Dont submit the form.
     return false; 
 
-}
-
+});
