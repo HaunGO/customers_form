@@ -6,7 +6,8 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+   
   <!-- 
   <meta property="og:title" content="">
   <meta property="og:type" content="">
@@ -27,7 +28,7 @@
 </head>
 
 <body>
-<h1>B:H + Dealer's Warehouse</h1>
+<h1 class="text-3xl font-bold underline">B:H + Dealer's Warehouse</h1>
 
     <h1>Customers</h1>
 
@@ -108,15 +109,18 @@
     </form>
     
     <br>
-<button id="updateButton">Update</button> &nbsp; 
-<button id="purgeButton">Purge DB</button>
+    
+    <button id="updateButton">Show Customers</button> &nbsp; 
+    <button id="purgeButton">Purge Database</button>
+    
+    <br>
+    <br>
+
+    <section id="customers">
 
 
-<section id="customers">
 
-
-
-</section>
+    </section>
 
     <script src="js/main.js"></script>
 
